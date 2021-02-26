@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 31 web tempalating</title>
+    <style>
+        .user{
+            background-color: lightblue;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 5px 5px 20px lightcoral;
+            width: 45%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- use the jeson placeholder typrcode / user  for using api-->
+    <!-- https://jsonplaceholder.typicode.com/users -->
+    <!-- <ul id="user_list">
+
+    </ul> -->
+    <div id="user_container">
+
+    </div>
+
+
+
+
+    
+    <script>
+         fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(data => shoUserName(data));
+     function shoUserName(data){
+            let userHTML ='';
+            data.forEach(user => {
+                userHTML = userHTML + `<div class="user">
+                    <h2>${user.name}</h2> 
+                    <p>${user.email}</p>
+                    <p>${user.company.name} . ${user.company.catchPhrase} . ${user.company.bs}</p>
+                    
+                    </div>`                
+            });
+            // console.log(list)
+            const userContainer = document.getElementById("user_container");
+            userContainer.innerHTML = userHTML;
+            }
+    //         fetch("https://jsonplaceholder.typicode.com/users")
+    //     .then(res => res.json())
+    //     .then(data => shoUserName(data));
+    //  function shoUserName(data){
+    //         let list ='';
+    //         data.forEach(user => {
+    //             list = list + `<li>${user.name} : ${user.email}</li>`                
+    //         });
+    //         // console.log(list)
+    //         const userList = document.getElementById("user_list");
+    //         userList.innerHTML = list;
+    //         }
+    </script>
+</body>
+</html>
