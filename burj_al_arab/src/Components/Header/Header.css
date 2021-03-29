@@ -1,0 +1,32 @@
+.header{
+    height: 300px;
+    background-position: center center;
+    background-size: 100%;
+    border: 8px solid black;
+}
+.title-container{
+    color : #fff;
+    /* align-items: center; */
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+}
+nav ul li{
+   display : inline-block;
+   margin-left: 50px;
+   font-size: 20px;
+   font-weight: 600;
+
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.logo{
+    background-color: #fff;
+    height: 50px;
+    margin-left: 200px;
+}
+Link{
+    color: #fff;
+}
